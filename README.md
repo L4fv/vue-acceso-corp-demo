@@ -1,6 +1,6 @@
 FRONTEND ROADMAP
 
-Requisito: https://www.youtube.com/watch?v=Zwcqq-7IDI0 (30’)
+https://github.com/nodesource/distributions/blob/master/README.md
 
 CAPITULO 1 - THE JS WAY
 1.	Instalar NODE JS 
