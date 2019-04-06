@@ -16,9 +16,12 @@
        <v-btn dark @click="agregarItem">agregar</v-btn>
        <v-layout wrap row v-for="(item, key) in reporteDiario" 
         :key="key">
-         <v-flex xs4 class="red">{{item.nombre}}</v-flex>
+         <v-flex xs3 class="red">{{item.nombre}}</v-flex>
          <v-flex xs4 class="blue">{{item.detalle}}</v-flex>
-         <v-flex xs4 class="yellow">{{item.price}}</v-flex>
+         <v-flex xs3 class="yellow">{{item.price}}</v-flex>
+         <v-flex xs2 class="yellow">
+           <v-btn @click="eliminarItem(item)" icon>
+             <v-icon>delete</v-icon></v-btn></v-flex>
        </v-layout>
     </v-content>
   </v-app>
@@ -29,10 +32,12 @@ import { colaboradores, productos } from "./utils/db.js";
 export default {
   name: "App",
    methods: {
+     eliminarItem(item){
+       this.reporteDiario.splice(item, 1)
+     },
     agregarItem(){
       this.reporteDiario.push(
-        {nombre: this.persona.name,
-         detalle:this.producto.detalle,
+        {nombre: this.persona.name,detalle:this.producto.detalle,
          price:this.producto.price }) }  },
   data() {
     return {
