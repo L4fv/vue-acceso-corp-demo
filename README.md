@@ -1,37 +1,22 @@
 FRONTEND ROADMAP
 
-https://github.com/nodesource/distributions/blob/master/README.md
+# Instalar dependencias de desarrollo
+    1. Node js
+    2. VUE CLI 3
+    3  VSCODE
+# Template base
+    1. https://github.com/L4fv/vue-acceso-corp-demo
+# FRAMEWORK DE CSS STILOS (ESTETICA)
+    1. https://vuetifyjs.com/en/getting-started/quick-start
+# PASOS PARA LEVANTAR LA WEB
+    1. npm install // instalar dependencias
+    2. npm run server // levantar proyecto
+# SERVICIOS
+    1. GET PRODUCTOS: /orq/acceso/v1.0/getProductos
+    2. POST PRODUCTOS:  /orq/acceso/v1.0/postProductos
+    3. GET RESERVAS:  /orq/acceso/v1.0/getReservas
+    4. POST RESERVAS:  /orq/acceso/v1.0/postProductos
 
-CAPITULO 1 - THE JS WAY
-1.	Instalar NODE JS 
-Windows:  https://nodejs.org/es/download/
-Linux
-Node.js v10.x:
-
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_10.x | bash -
-apt-get install -y nodejs
-Node.js v8.x:
-
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_8.x | bash -
-apt-get install -y nodejs
-
-Verificar instalación:
-	node --version
-
-2.	Instalar VUE CLI :  npm install -g @vue/cli
-
-3.	Descargar Template  - Hello World: 
-https://github.com/L4fv/vue-acceso-corp-demo
 
 
 
