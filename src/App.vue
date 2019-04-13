@@ -8,8 +8,9 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>        
         <v-btn flat to="/">HOME</v-btn>
+        <v-btn flat to="/listaReservas">Lista Reservas</v-btn>
         <v-btn flat to="/admin">admin</v-btn>
-        <v-btn flat to="/listaProductos">Lista productos</v-btn>
+        <v-btn flat to="/listaProductos">Lista productos</v-btn>        
       </v-toolbar-items>
     </v-toolbar>
     <v-content>

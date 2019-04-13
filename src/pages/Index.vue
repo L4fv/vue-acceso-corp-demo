@@ -46,6 +46,7 @@ export default {
           cantidad:this.cantidad 
         } // parametros
       });
+      this.$router.push("/listaReservas")
       console.log(respuesta.data)
     }
   },
