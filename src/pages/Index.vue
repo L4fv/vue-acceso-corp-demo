@@ -8,7 +8,8 @@
       <v-text-field v-model="nombre" label="Nombre Cliente"></v-text-field>
     </v-flex>
     <v-flex xs12>
-      <v-select :items="items" label="Seleccionar Producto"></v-select>
+      <v-select :items="listaProductos" item-text="no_produc" 
+       item-value="co_produc" label="Seleccionar Producto"></v-select>
     </v-flex>
     <v-flex xs12>
       <v-select :items="[1,2,3,4,5]" label="unidades"></v-select>
@@ -30,7 +31,6 @@ export default {
       method: "GET", //get post
     });
     this.listaProductos = respuesta.data.resultado
-    console.log();
   }
 };
 </script>
