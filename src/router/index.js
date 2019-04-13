@@ -15,7 +15,7 @@ export default new Router({
       component: Index,
     },    
     {
-      path: '/reservas',
+      path: '/listaProductos',
       name: 'home',
       component: Reservas,
     },

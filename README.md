@@ -12,15 +12,22 @@ FRONTEND ROADMAP
     1. npm install // instalar dependencias
     2. npm run server // levantar proyecto
 # SERVICIOS
-    1. GET PRODUCTOS: /orq/acceso/v1.0/getProductos
-    2. POST PRODUCTOS:  /orq/acceso/v1.0/postProductos
-    3. GET RESERVAS:  /orq/acceso/v1.0/getReservas
+    1. GET PRODUCTOS:
+    http://sd1.accesocrediticio.com:7000/orq/acceso/v1.0/getProductos
+    2. POST PRODUCTOS: http://sd1.accesocrediticio.com:7000/orq/acceso/v1.0/postProductos
+    {
+	"nombreProducto": "pan",
+	"precioProducto": 120,
+	"stockProducto": 20
+    }
+    3. GET RESERVAS:  
+     http://sd1.accesocrediticio.com:7000/orq/acceso/v1.0/getReservas
     4. POST RESERVAS: 
      http://sd1.accesocrediticio.com:7000/orq/acceso/v1.0/postReservaspostProductos
-    {"codigoProducto":1,
-    "nombre": "Luis",
-    "cantidad": 1
-    }
+        {"codigoProducto":1,
+        "nombre": "Luis",
+        "cantidad": 1
+        }
 
 
 
