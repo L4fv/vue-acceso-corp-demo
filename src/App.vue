@@ -9,6 +9,7 @@
       <v-toolbar-items>        
         <v-btn flat to="/">HOME</v-btn>
         <v-btn flat to="/admin">admin</v-btn>
+        <v-btn flat to="/reservas">Reservas</v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
