@@ -2,7 +2,7 @@
   <v-layout wrap row>
     <h2>mis productos</h2>
     
-    <v-flex xs6 md12 lg6 v-for="item in listaProductos">
+    <v-flex xs12 v-for="item in listaProductos">
         <h2>{{item.no_produc}} -- {{item.im_produc}} -- {{item.ca_stocks}}</h2>
     </v-flex>
   </v-layout>

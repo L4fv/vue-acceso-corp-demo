@@ -31,8 +31,8 @@ export default {
         method: "POST", //get post
         data: {
           nombreProducto: this.producto,
-          precio: this.precio,
-          stock: this.stock
+          precioProducto: this.precio,
+          stockProducto: this.stock
         } // parametros
       });
       console.log(respuesta.data)
