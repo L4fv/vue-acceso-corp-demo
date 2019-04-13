@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Index from '../pages/Index.vue';
-import Hola from '../pages/Hola.vue';
 import Admin from '../pages/Admin.vue';
+import Reservas from '../pages/Reservas.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -13,15 +13,15 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Index,
-    },
+    },    
     {
-      path: '/proyecto',
+      path: '/reservas',
       name: 'home',
-      component: Hola,
+      component: Reservas,
     },
     {
       path: '/admin',
-      name: 'home',
+      name: 'admin',
       component: Admin,
     }
   ],
