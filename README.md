@@ -15,7 +15,12 @@ FRONTEND ROADMAP
     1. GET PRODUCTOS: /orq/acceso/v1.0/getProductos
     2. POST PRODUCTOS:  /orq/acceso/v1.0/postProductos
     3. GET RESERVAS:  /orq/acceso/v1.0/getReservas
-    4. POST RESERVAS:  /orq/acceso/v1.0/postProductos
+    4. POST RESERVAS: 
+     http://sd1.accesocrediticio.com:7000/orq/acceso/v1.0/postReservaspostProductos
+    {"codigoProducto":1,
+    "nombre": "Luis",
+    "cantidad": 1
+    }
 
 
 
