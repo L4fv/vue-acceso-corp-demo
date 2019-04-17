@@ -4,6 +4,7 @@ import Index from '../pages/Index.vue';
 import Admin from '../pages/Admin.vue';
 import Reservas from '../pages/Reservas.vue';
 import ListaReservas from '../pages/ListaReservas.vue';
+import Demo from '../pages/Demo.vue';
 
 Vue.use(Router);
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/listaReservas',
       name: 'reservas',
       component: ListaReservas,
+    },
+    {
+      path: '/demo',
+      name: 'demo',
+      component: Demo,
     }
   ],
 });
