@@ -8,15 +8,11 @@
 import axios from "axios";
 export default {
   data() {
-    return {
-
-    };
+    return {};
   },
   methods: {
 
   },
-  async created() {
-
-  }
+  async created() {}
 };
 </script>
