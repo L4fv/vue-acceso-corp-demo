@@ -13,6 +13,11 @@ export default {
   methods: {
 
   },
-  async created() {}
+  async created() {
+
+  },
+  watch:{
+    //model
+  }
 };
 </script>
