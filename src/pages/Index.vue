@@ -24,6 +24,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      cantidad:2,
       categoria: 2,
       listaCat: [],
       catalogoCategories: [
@@ -75,9 +76,9 @@ export default {
     };
   },
   methods: {
-    async myFunction(value) {
+    async myFunction(categoria, cantidad) {
       const response = await axios({
-        url: `https://api.thecatapi.com/v1/images/search?limit=3&category_ids=${value}`,
+        url: `https://api.thecatapi.com/v1/images/search?limit=${cantidad}&category_ids=${categoria}`,
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -88,12 +89,14 @@ export default {
     }
   },
   async created() {
-    this.myFunction(this.categoria);
+    this.myFunction(this.categoria, this.cantidad);
   },
   watch: {
-    categoria(nuevo, viejo) {
-      console.log("viejo: " + viejo + "nuevo " + nuevo);
-      this.myFunction(nuevo);
+    categoria(nuevo, viejo) {      
+      this.myFunction(nuevo, this.cantidad);
+    },
+    cantidad(nuevo, viejo) {      
+      this.myFunction(this.categoria, nuevo);
     }
     //model
   }
