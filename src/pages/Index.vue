@@ -15,6 +15,7 @@
     <v-flex xs12>
       <v-text-field v-model="nombre" label="Nombre"></v-text-field>
     </v-flex>
+    {{listaCat}}
     <v-flex xs3 v-for="(item, key) in listaCat" :key="key" pa-2>
       <img :src="item.url" style="width: 100%; height:80px">
       <v-icon color="red" @click="addFavorito(item.id)">favorite</v-icon>
