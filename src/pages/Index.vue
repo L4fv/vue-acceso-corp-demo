@@ -13,13 +13,14 @@
       <v-text-field v-model="cantidad" label="cantidad"></v-text-field>
     </v-flex>
     <v-flex xs12>
-      <v-text-field v-model="nombre"
-       label="Nombre"></v-text-field>
+      <v-text-field v-model="nombre" label="Nombre"></v-text-field>
     </v-flex>
     <v-flex xs3 v-for="(item, key) in listaCat" :key="key" pa-2>
       <img :src="item.url" style="width: 100%; height:80px">
       <v-icon color="red" @click="addFavorito(item.id)">favorite</v-icon>
     </v-flex>
+    <v-snackbar v-model="showSnack"  timeout="3000"
+    bottom>AGREGADO EXITOSAMENTE</v-snackbar>
   </v-layout>
 </template>
 
@@ -28,6 +29,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      showSnack: false,
       nombre: null,
       cantidad: 2,
       categoria: 2,
@@ -81,6 +83,22 @@ export default {
     };
   },
   methods: {
+    async addFavorito(id) {
+/*       const response = await axios({
+        url: `https://api.thecatapi.com/v1/votes`,
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+          "x-api-key": "d1f20906-fc9e-4bd7-9358-4d799f47cf0b"
+        },
+        data: {
+          image_id: id,
+          sub_id: this.nombre, //LUIS
+          value: 1
+        }
+      }); */
+      this.showSnack = true
+    },
     async myFunction(categoria, cantidad) {
       const response = await axios({
         url: `https://api.thecatapi.com/v1/images/search?limit=${cantidad}&category_ids=${categoria}`,
