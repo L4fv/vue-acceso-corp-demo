@@ -10,11 +10,15 @@
       ></v-select>
     </v-flex>
     <v-flex xs12>
-      <v-text-field v-model="cantidad" 
-      label="cantidad"></v-text-field>
+      <v-text-field v-model="cantidad" label="cantidad"></v-text-field>
+    </v-flex>
+    <v-flex xs12>
+      <v-text-field v-model="nombre"
+       label="Nombre"></v-text-field>
     </v-flex>
     <v-flex xs3 v-for="(item, key) in listaCat" :key="key" pa-2>
       <img :src="item.url" style="width: 100%; height:80px">
+      <v-icon color="red" @click="addFavorito(item.id)">favorite</v-icon>
     </v-flex>
   </v-layout>
 </template>
@@ -24,7 +28,8 @@ import axios from "axios";
 export default {
   data() {
     return {
-      cantidad:2,
+      nombre: null,
+      cantidad: 2,
       categoria: 2,
       listaCat: [],
       catalogoCategories: [
@@ -92,10 +97,10 @@ export default {
     this.myFunction(this.categoria, this.cantidad);
   },
   watch: {
-    categoria(nuevo, viejo) {      
+    categoria(nuevo, viejo) {
       this.myFunction(nuevo, this.cantidad);
     },
-    cantidad(nuevo, viejo) {      
+    cantidad(nuevo, viejo) {
       this.myFunction(this.categoria, nuevo);
     }
     //model
