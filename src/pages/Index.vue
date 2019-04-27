@@ -8,10 +8,13 @@
         v-model="categoria"
         label="Seleccionar categoria"
       ></v-select>
-      {{categoria}}
     </v-flex>
-    <v-flex xs12 v-for="(item, key) in listaCat" :key="key" >
-      <img :src="item.url">
+    <v-flex xs12>
+      <v-text-field v-model="cantidad" 
+      label="cantidad"></v-text-field>
+    </v-flex>
+    <v-flex xs3 v-for="(item, key) in listaCat" :key="key" pa-2>
+      <img :src="item.url" style="width: 100%; height:80px">
     </v-flex>
   </v-layout>
 </template>
@@ -72,24 +75,25 @@ export default {
     };
   },
   methods: {
-    async myFunction() {
+    async myFunction(value) {
       const response = await axios({
-        url: `https://api.thecatapi.com/v1/images/search?limit=3&category_ids=${this.categoria}`,
+        url: `https://api.thecatapi.com/v1/images/search?limit=3&category_ids=${value}`,
         method: "GET",
         headers: {
           "content-type": "application/json",
           "x-api-key": "d1f20906-fc9e-4bd7-9358-4d799f47cf0b"
         }
       });
-      this.listaCat = response.data
+      this.listaCat = response.data;
     }
   },
   async created() {
-    this.myFunction()
+    this.myFunction(this.categoria);
   },
   watch: {
-    categoria(nuevo){     
-      this.myFunction()
+    categoria(nuevo, viejo) {
+      console.log("viejo: " + viejo + "nuevo " + nuevo);
+      this.myFunction(nuevo);
     }
     //model
   }
