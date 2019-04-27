@@ -15,12 +15,13 @@
     <v-flex xs12>
       <v-text-field v-model="nombre" label="Nombre"></v-text-field>
     </v-flex>
-    {{listaCat}}
     <v-flex xs3 v-for="(item, key) in listaCat" :key="key" pa-2>
       <img :src="item.url" style="width: 100%; height:80px">
-      <v-icon color="red" @click="addFavorito(item.id)">favorite</v-icon>
+      <v-icon color="red" @click="sumar">favorite</v-icon>
+      {{suma}}
+      <v-btn color="blue" @click="addFavorito(item.id)">agregar</v-btn>
     </v-flex>
-    <v-snackbar v-model="showSnack" timeout="3000" bottom>AGREGADO EXITOSAMENTE</v-snackbar>
+    <v-snackbar v-model="showSnack" :timeout="3000" bottom>AGREGADO EXITOSAMENTE</v-snackbar>
   </v-layout>
 </template>
 
@@ -29,6 +30,9 @@ import axios from "axios";
 export default {
   data() {
     return {
+      suma: 1,
+      cantidad: 5,
+      value: null,
       showSnack: false,
       nombre: null,
       cantidad: 2,
@@ -83,6 +87,9 @@ export default {
     };
   },
   methods: {
+    sumar() {
+      this.suma = this.suma + 1;
+    },
     async addFavorito(id) {
       const response = await axios({
         url: `https://api.thecatapi.com/v1/votes`,
@@ -94,9 +101,11 @@ export default {
         data: {
           image_id: id,
           sub_id: this.nombre, //LUIS
-          value: 1
+          value: this.suma
         }
       });
+      console.log(response.data);
+      this.value = null;
       this.showSnack = true;
     },
     async myFunction(categoria, cantidad) {
