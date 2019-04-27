@@ -19,8 +19,7 @@
       <img :src="item.url" style="width: 100%; height:80px">
       <v-icon color="red" @click="addFavorito(item.id)">favorite</v-icon>
     </v-flex>
-    <v-snackbar v-model="showSnack"  timeout="3000"
-    bottom>AGREGADO EXITOSAMENTE</v-snackbar>
+    <v-snackbar v-model="showSnack" timeout="3000" bottom>AGREGADO EXITOSAMENTE</v-snackbar>
   </v-layout>
 </template>
 
@@ -84,7 +83,7 @@ export default {
   },
   methods: {
     async addFavorito(id) {
-/*       const response = await axios({
+      const response = await axios({
         url: `https://api.thecatapi.com/v1/votes`,
         method: "post",
         headers: {
@@ -96,8 +95,8 @@ export default {
           sub_id: this.nombre, //LUIS
           value: 1
         }
-      }); */
-      this.showSnack = true
+      });
+      this.showSnack = true;
     },
     async myFunction(categoria, cantidad) {
       const response = await axios({
